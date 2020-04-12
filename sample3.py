@@ -10,6 +10,7 @@ mainWindow = tkinter.Tk()
 
 mainWindow.title("Grid demo")
 mainWindow.geometry('640x480-8-200')
+mainWindow['padx'] = 8
 
 label = tkinter.Label(mainWindow, text="Tkinter Grid Demo")
 label.grid(row=0, column=0, columnspan=3)
@@ -83,15 +84,15 @@ monthLabel.grid(row=0, column=1, sticky='w')
 yearLabel.grid(row=0, column=2, sticky='w')
 # Date spinners
 daySpin = tkinter.Spinbox(dateFrame, width=5, from_=1, to=31)
-monthSpin = tkinter.Spinbox(dateFrame, width=5, values=("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))
-yearSpin = tkinter.Spinbox(dateFrame, width=5, from_=2000, to=2099)
+monthSpin = tkinter.Spinbox(dateFrame, width=7, values=("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))
+yearSpin = tkinter.Spinbox(dateFrame, width=7, from_=2000, to=2099)
 daySpin.grid(row=1, column=0)
 monthSpin.grid(row=1, column=1)
 yearSpin.grid(row=1, column=2)
 
 # Buttons
-okButton = tkinter.Button(mainWindow, text="OK")
-cancelButton = tkinter.Button(mainWindow, text="Cancel", command=mainWindow.destroy)
+okButton = tkinter.Button(mainWindow, width=7, text="OK")
+cancelButton = tkinter.Button(mainWindow, width=7, text="Cancel", command=mainWindow.destroy)
 okButton.grid(row=4, column=3, sticky='e')
 cancelButton.grid(row=4, column=4, sticky='w')
 
