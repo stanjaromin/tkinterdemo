@@ -70,10 +70,10 @@ minuteSpinner.grid(row=0, column=2)
 tkinter.Label(timeFrame, text=':').grid(row=0, column=3)
 secondSpinner.grid(row=0, column=4)
 
-
 # Frame for the date spinners
 dateFrame = tkinter.Frame(mainWindow)
 dateFrame.grid(row=4, column=0, sticky='new')
+
 # Date labels
 dayLabel = tkinter.Label(dateFrame, text="Day")
 monthLabel = tkinter.Label(dateFrame, text="Month")
@@ -89,7 +89,10 @@ daySpin.grid(row=1, column=0)
 monthSpin.grid(row=1, column=1)
 yearSpin.grid(row=1, column=2)
 
-
-
+# Buttons
+okButton = tkinter.Button(mainWindow, text="OK")
+cancelButton = tkinter.Button(mainWindow, text="Cancel", command=mainWindow.destroy)
+okButton.grid(row=4, column=3, sticky='e')
+cancelButton.grid(row=4, column=4, sticky='w')
 
 mainWindow.mainloop()
